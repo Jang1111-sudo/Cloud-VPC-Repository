@@ -114,7 +114,7 @@ role-based access control and improve scalability.
 | App → Internet (via NAT) | ✅ Success |
 
 ### Example Test Commands
-```bash
+
 # Web → App communication
 curl http://<app-private-ip>
 
