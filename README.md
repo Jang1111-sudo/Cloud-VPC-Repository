@@ -124,18 +124,20 @@ curl https://www.google.com
 ---
 
 **Troubleshooting Experience (Key Learning)**
-During testing, the App server could not access the internet.
-Initial suspicion included Security Groups and DNS configuration.
+1. During testing, the App server could not access the internet. Initial suspicion included Security Groups and DNS configuration.
+2. In WEB server, could not access the App server via ssh
 
 **Root Cause**
--NAT Gateway was not created.
--Private Route Table had no outbound route
+1-(1)NAT Gateway was not created.
+1-(2)Private Route Table had no outbound route
+2-(1)Not created Inbound rule of Security Group of App server about source SG-WEB(22 port)
 
 **Resolution**
 -Created NAT Gateway in Public Subnet
 -Attached Elastic IP
 -Updated Private Route Table to route 0.0.0.0/0 via NAT
 -This reinforced the importance of route tables over intuition when diagnosing cloud networking issues.
+-Created new Inbound rule about SG-WEB(22 port) as source
 
 **Key Takeaways**
 -Public Subnet does not automatically mean public access
