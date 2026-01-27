@@ -129,37 +129,63 @@ curl https://www.google.com
 
 **Root Cause**
 1-(1)NAT Gateway was not created.
+
 1-(2)Private Route Table had no outbound route
+
 2-(1)Not created Inbound rule of Security Group of App server about source SG-WEB(22 port)
 
 **Resolution**
+
 -Created NAT Gateway in Public Subnet
+
 -Attached Elastic IP
+
 -Updated Private Route Table to route 0.0.0.0/0 via NAT
+
 -This reinforced the importance of route tables over intuition when diagnosing cloud networking issues.
+
 -Created new Inbound rule about SG-WEB(22 port) as source
 
 **Key Takeaways**
+
 -Public Subnet does not automatically mean public access
+
 -Private Subnet instances require NAT for outbound internet connectivity
+
 -Security Group references are superior to CIDR-based rules for internal services
+
 -SSH is for management; service-level testing should use application protocols
+
 -Most cloud networking issues are caused by routing, not instances
 
 **Technologies Used**
+
 AWS EC2
+
 AWS VPC
+
 Internet Gateway
+
 NAT Gateway
+
 Elastic IP
+
 Security Groups
+
 Apache HTTP Server (httpd)
+
 Amazon Linux
+
 Next Improvements
+
 Add Application Load Balancer in front of Web tier
+
 Replace Bastion SSH with AWS Systems Manager (SSM)
+
 Convert architecture into Terraform (IaC)
+
 One-Line Summary (Interview Ready)
 
 Designed and troubleshot a secure AWS VPC architecture with public web access,
+
 private application isolation, and NAT-based outbound connectivity.
