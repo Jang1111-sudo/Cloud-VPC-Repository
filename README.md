@@ -123,7 +123,7 @@ curl https://www.google.com
 
 ---
 
-**Troubleshooting Experience (Key Learning)**
+##Troubleshooting Experience (Key Learning)
 During testing, the App server could not access the internet.
 Initial suspicion included Security Groups and DNS configuration.
 
