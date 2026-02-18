@@ -23,37 +23,23 @@ real-world cloud engineering practices.
 ---
 
 ## Architecture Diagram
-
-Internet
-
-|
-
+```bash
+    Internet
+        ↓
 [ Internet Gateway ]
-
-|
-
+        ↓
 [ Public Subnet (10.0.1.0/24) ]
-
-|
-
-[ Web EC2 ]
-
-|
-
+        ↓
+    [ Web EC2 ]
+        ↓
 (VPC local routing)
-
-|
-
-[ App EC2 ]
-
-|
-
+        ↓
+    [ App EC2 ]
+        ↓
 [ NAT Gateway + Elastic IP ]
-
-|
-
-Internet
-
+        ↓
+      Internet
+```
 ---
 
 ## Network Configuration
