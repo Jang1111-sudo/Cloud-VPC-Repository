@@ -189,3 +189,5 @@ One-Line Summary (Interview Ready)
 Designed and troubleshot a secure AWS VPC architecture with public web access,
 
 private application isolation, and NAT-based outbound connectivity.
+
+👨‍💻 Author Tae Young Jang
